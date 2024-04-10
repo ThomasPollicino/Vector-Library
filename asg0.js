@@ -1,16 +1,12 @@
 var ctx;
-// DrawRectangle.js
 function main() {
-    // Retrieve <canvas> element <- (1)
     var canvas = document.getElementById('example');
     if (!canvas) {
         console.log('Failed to retrieve the <canvas> element');
     return;
     }
-    // Get the rendering context for 2DCG <- (2)
     ctx = canvas.getContext('2d');
 
-    // Draw a blue rectangle <- (3)
     ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; 
     ctx.fillRect(0, 0, canvas.width, canvas.height); 
 
@@ -117,9 +113,9 @@ function handleDrawOperationEvent(){
 
 function angleBetween(v1, v2){
     const getDot = Vector3.dot(v1, v2);
-    const mag1 = v1.magnitude();
-    const mag2 = v2.magnitude();
-    const cos = getDot / (mag1 * mag2);
+    const magv1 = v1.magnitude();
+    const magv2 = v2.magnitude();
+    const cos = getDot / (magv1 * magv2);
     const radians = Math.acos(cos);
     const degrees = radians * 180 / Math.PI;
     return degrees;
